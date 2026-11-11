@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1F3A5F">
+<meta name="description" content="Make printable Bible puzzles for kids ages 5 to 13: word searches, crosswords, scrambles and fill-in-the-blanks from 30 Bible story themes, with answer keys.">
+<meta name="application-name" content="Bible Puzzle Maker">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Bible Puzzles">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Bible Puzzle Maker">
+<meta property="og:description" content="Printable Bible puzzles for kids ages 5 to 13, with answer keys.">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<title>Bible Puzzle Maker: printable Bible puzzles for kids</title>
+</head>
+<body>
+<noscript><p style="padding:1rem;font-family:sans-serif">Bible Puzzle Maker needs JavaScript. Please turn it on in your browser.</p></noscript>
+<header class="top"><h1>Bible Puzzle Maker</h1><div class="st" id="hdrStk"></div><button id="install" type="button" hidden>Install app</button></header>
+<main class="layout">
+  <form class="controls" onsubmit="return false">
+    <label>Theme <select id="theme"></select></label>
+    <div class="pv" id="pv"></div>
+    <label>Puzzle
+      <select id="type">
+        <option value="wordsearch">Word search</option>
+        <option value="crossword">Crossword</option>
+        <option value="letters">Word scramble (letters)</option>
+        <option value="scramble">Verse scramble</option>
+        <option value="cloze">Fill in the blanks</option>
+      </select>
+    </label>
+    <label id="verseWrap" hidden>Start at verse <select id="verse"></select></label>
+    <label id="lenWrap" hidden>Passage length <select id="len"><option value="auto">Automatic (by age)</option><option value="1">1 verse</option><option value="3">3 verses</option><option value="5">5 verses</option><option value="8">8 verses</option></select></label>
+    <label>Age group
+      <select id="level">
+        <option value="easy">Ages 5–7</option>
+        <option value="medium" selected>Ages 8–10</option>
+        <option value="hard">Ages 11–13</option>
+      </select>
+    </label>
+    <p class="note" id="levelNote"></p>
+    <label>Paper <select id="paper"><option value="letter">US Letter</option><option value="A4">A4</option></select></label>
+    <label>Stickers <select id="stk"><option value="color">Full color</option><option value="bw">Black and white (saves ink)</option><option value="none">None</option></select></label>
+    <label class="check"><input id="key" type="checkbox" checked> Answer key on a second page</label>
+    <div class="actions">
+      <button id="print" type="button" class="primary">Print or save PDF</button>
+      <button id="again" type="button">New puzzle</button>
+    </div>
+    <p class="note">Verses are World English Bible text. Word searches and letter scrambles use each theme’s vocabulary list.</p>
+    <p class="note" id="more" hidden>More puzzles are on the way. <a href="#" target="_blank" rel="noopener">See what’s coming</a></p>
+  <p class="note" id="iosHint" hidden>To install on iPhone or iPad: tap Share, then Add to Home Screen.</p>
+  </form>
+  <section id="preview" aria-live="polite"></section>
+</main>
+<script type="module" src="/src/app.js"></script>
+</body>
+</html>
